@@ -9,10 +9,13 @@ public class LongestSentanceAnswer
         var sentences = s.Split(new char[] {'.', '?' , '!' });
 
         foreach (var sentence in sentences) {
-            //split words in the sentence by space
-            var words = sentence.Split(' ');
+            //split words in the sentence by space, remove blank space as well
+            var words = sentence.Split(' ', StringSplitOptions.RemoveEmptyEntries);
             int wordsLength = words.Length;
 
+            if (totalWords < wordsLength) {
+                totalWords = wordsLength;
+            }
         }
 
         return totalWords ;

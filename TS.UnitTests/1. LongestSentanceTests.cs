@@ -12,5 +12,9 @@ public class LongestSentanceTests
         var outcome = LongestSentanceAnswer.Solution(input);
 
         Assert.AreEqual(4, outcome);
+
+        var input2 = $"Forget CVs..Save time . x x";
+        var outcome2 = LongestSentanceAnswer.Solution(input2);
+        Assert.AreEqual(2, outcome2);
     }
 }
