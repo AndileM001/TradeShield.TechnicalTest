@@ -4,7 +4,8 @@ public class DeepestPitAnswer
 {
     public static int Solution(int[] points)
     {
-        var depth = -1;
+        var depth = 0;
+        bool tripletsFound = false;
         for (int i = 0; i < points.Length -1; i++) {
             //check if A[P] > A[P+1]
             var P = i;
@@ -31,9 +32,15 @@ public class DeepestPitAnswer
                 {
                     depth = depthValue;
                 }
+                tripletsFound = true;
             }
 
         }
+        if (!tripletsFound) 
+        {
+            return -1;
+        }
+
         return depth;
     }
 
