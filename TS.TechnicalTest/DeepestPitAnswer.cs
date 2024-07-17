@@ -15,7 +15,7 @@ public class DeepestPitAnswer
                 Q = P + 1;
             }
             //check if Q is assigned 
-            if (Q != null) {
+            if (Q.HasValue) {
                 // check if A[Q] < A[Q+1]
                 if (points[Q.Value] < points[Q.Value + 1])
                 {
@@ -23,7 +23,18 @@ public class DeepestPitAnswer
                 }
             }
 
+            if(Q.HasValue && R.HasValue)
+            {
+                //calculate the depth using the triplets P, Q and R
+            }
+
         }
         return depth;
+    }
+
+    public int CalculateDepth(int[] triplets ) {
+        int depth = Math.Min[];
+
+        return depth;    
     }
 }
