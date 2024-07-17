@@ -34,7 +34,20 @@ public class DeepestPitAnswer
                 }
                 tripletsFound = true;
             }
-
+            //case if A[Q+2] index is within index bounds & A[Q+2] < A[Q]
+            if (Q.HasValue && R.HasValue && R.Value + 1 <= points.Length)
+            {
+                if (points[Q.Value] < points[R.Value + 1])
+                {
+                    R = R.Value + 1;
+                }
+                var depthValue = CalculateDepth(points, P, Q.Value, R.Value);
+                if (depthValue > depth)
+                {
+                    depth = depthValue;
+                }
+                tripletsFound = true;
+            }
         }
         if (!tripletsFound) 
         {
