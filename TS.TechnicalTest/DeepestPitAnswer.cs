@@ -26,15 +26,15 @@ public class DeepestPitAnswer
             if(Q.HasValue && R.HasValue)
             {
                 //calculate the depth using the triplets P, Q and R
+                var depthValue = CalculateDepth(points, P, Q.Value, R.Value);
             }
 
         }
         return depth;
     }
 
-    public int CalculateDepth(int[] triplets ) {
-        int depth = Math.Min[];
-
-        return depth;    
+     private static int CalculateDepth(int[] points, int P, int Q, int R ) {
+        //min{A[P] − A[Q], A[R] − A[Q]}.
+        return Math.Min(points[P] - points[Q], points[R] - points[Q] );
     }
 }
