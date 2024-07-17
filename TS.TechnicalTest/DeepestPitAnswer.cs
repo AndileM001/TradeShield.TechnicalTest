@@ -5,7 +5,7 @@ public class DeepestPitAnswer
     public static int Solution(int[] points)
     {
         var depth = -1;
-        for (int i = 0; i < points.Length; i++) {
+        for (int i = 0; i < points.Length -1; i++) {
             //check if A[P] > A[P+1]
             var P = i;
             Nullable<int> Q = null;
@@ -27,6 +27,10 @@ public class DeepestPitAnswer
             {
                 //calculate the depth using the triplets P, Q and R
                 var depthValue = CalculateDepth(points, P, Q.Value, R.Value);
+                if(depthValue > depth)
+                {
+                    depth = depthValue;
+                }
             }
 
         }
